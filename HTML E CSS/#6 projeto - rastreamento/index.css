@@ -1,0 +1,196 @@
+*{
+    font-family: "roboto";
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    min-height: 800px;
+
+}
+.container{
+    display: flex;
+
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    width: 275px;
+    transform: translate(0);
+}
+.item .circulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border: 5px solid #0f0;
+    border-radius: 50%;
+    transform: translate(0);
+
+}
+.imagem{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    
+    
+    
+}
+
+img{
+    
+   
+    
+}
+
+.item .circulo::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: #000;
+    transform: scaleX(1);
+    transform-origin: 100% 0%;
+    animation: 1s animacao-circulo forwards linear;
+}
+.item:nth-child(2) .circulo::before{
+    animation-delay: 2s;
+}
+.item:nth-child(3) .circulo::before{
+    animation-delay: 4s;
+}
+.item:nth-child(4) .circulo::before{
+    animation-delay: 6s;
+}
+@keyframes animacao-circulo{
+    0%{
+        transform: scaleX(1);
+        
+    }
+    100%{
+        transform: scaleX(0);
+    }
+}
+.item .circulo::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: #0f0;
+    height: 5px;
+
+}
+.item:not(:nth-child(4)) .circulo::after{    
+    left: 82px;
+    animation: 1s animacao-linha forwards linear;
+
+}
+@keyframes animacao-linha{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 190px;
+    }
+
+}
+.item:nth-child(1) .circulo::after{
+    animation-delay: 1s;
+}
+.item:nth-child(2) .circulo::after{
+    animation-delay: 3s;
+}
+.item:nth-child(3) .circulo::after{
+    animation-delay: 5s;
+}
+.item .circulo i{
+    font-size: 32pt;
+    color: #0f0;
+    transform: scale(0);
+    animation: 0.5s animacao-icone forwards cubic-bezier(0.175, 0.885, 0.32, 1.4);
+
+}
+@keyframes animacao-icone{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.item:nth-child(1) .circulo i {
+    animation-delay: 0.25s;
+}
+.item:nth-child(2) .circulo i {
+    animation-delay: 2.25s;
+}
+.item:nth-child(3) .circulo i {
+    animation-delay: 4.25s;
+}
+.item:nth-child(4) .circulo i {
+    animation-delay: 6.25s;
+}
+
+.item .descrição{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    opacity: 0;
+    animation: animacao-descricao forwards ease-in;
+
+}
+
+@keyframes animacao-descricao{
+
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+
+.item:nth-child(1) .descrição{
+
+    animation-delay: 0.25s;
+}
+.item:nth-child(2) .descrição{
+
+    animation-delay: 3.25s;
+}
+.item:nth-child(3) .descrição{
+
+    animation-delay: 4.25s;
+}
+.item:nth-child(4) .descrição{
+
+    animation-delay: 6.25s;
+}
+
+.item h2{
+    color: #fff;
+    font-size: 16pt;
+    margin: 0;
+    margin-top: 32px;
+
+}
+
+.item h4{
+    color:#fff;
+    font-size: 12pt;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 8px;    
+
+}
